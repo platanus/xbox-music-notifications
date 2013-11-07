@@ -21,5 +21,12 @@ app.mainViewModel.playerVM.queue.currentQueueElement.subscribe(function(element)
             window.postMessage({ type: "NEW_SONG", song: newSong }, "*");
             currentSong = newSong;
         }
+
+        // Preload the next song image
+        var nextSong = app.mainViewModel.queueVM.getNextQueueElement();
+        if(nextSong){
+            var image = new Image();
+            image.src = nextSong.pictureUrl(200, 200);
+        }
     }
 })
