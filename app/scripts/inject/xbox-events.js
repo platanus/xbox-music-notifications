@@ -8,12 +8,12 @@ app.mainViewModel.playerVM.queue.currentQueueElement.subscribe(function(element)
 
         // Prepare the song
         var newSong = {
-            id: song.ItemId,
+            id: song.Id,
             picture: element.pictureUrl(200, 200),
             title: song.Name,
             artist: song.PrimaryArtist.Name,
             album: song.ParentAlbum.Name,
-            duration: song.duration
+            duration: song.Duration
         };
 
         // If is the first song and is not the same than the last one
